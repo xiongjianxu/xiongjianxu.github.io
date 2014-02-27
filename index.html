@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>¸öÈËÖ÷Ò³</title>
-      <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+      <title>ä¸ªäººä¸»é¡µ</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
@@ -58,14 +58,14 @@
                       </li>
                       <li>
                           <a href="#">
-                              APF¿ò¼Ü
+                              APFæ¡†æ¶
                           </a>
                       </li>
                   </ul>
           </li>
           <li>
               <a href="#">
-                  ¶¯»­
+                  åŠ¨ç”»
                   <!-- Indicator with number -->
                   <span class="navbar-unread"></span>
               </a>
@@ -80,42 +80,42 @@
       var c = document.getElementById("matrix");
       var ctx = c.getContext("2d");
 
-      //È«ÆÁ
+      //å…¨å±
       c.height = window.innerHeight;
       c.width = window.innerWidth;
 
-      //ÎÄ×Ö
+      //æ–‡å­—
       var txts = "0123456789abcdefghigklmgopqrstuvwxyz";
-      //×ªÎªÊı×é
+      //è½¬ä¸ºæ•°ç»„
       txts = txts.split("");
 
       var font_size = 16;
       var columns = c.width/font_size;
-      //ÓÃÓÚ¼ÆËãÊä³öÎÄ×ÖÊ±×ø±ê£¬ËùÒÔ³¤¶È¼´ÎªÁĞÊı
+      //ç”¨äºè®¡ç®—è¾“å‡ºæ–‡å­—æ—¶åæ ‡ï¼Œæ‰€ä»¥é•¿åº¦å³ä¸ºåˆ—æ•°
       var drops = [];
-      //³õÊ¼Öµ
+      //åˆå§‹å€¼
       for(var x = 0; x < columns; x++)
           drops[x] = 1;
 
-      //Êä³öÎÄ×Ö
+      //è¾“å‡ºæ–‡å­—
       function draw()
       {
-//ÈÃ±³¾°Öğ½¥ÓÉÍ¸Ã÷µ½²»Í¸Ã÷
+//è®©èƒŒæ™¯é€æ¸ç”±é€æ˜åˆ°ä¸é€æ˜
           ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
           ctx.fillRect(0, 0, c.width, c.height);
-          ctx.fillStyle = "#0F0"; //ÎÄ×ÖÑÕÉ«
+          ctx.fillStyle = "#0F0"; //æ–‡å­—é¢œè‰²
           ctx.font = font_size + "px arial";
-//ÖğĞĞÊä³öÎÄ×Ö
+//é€è¡Œè¾“å‡ºæ–‡å­—
           for(var i = 0; i < drops.length; i++)
           {
-//Ëæ»úÈ¡ÒªÊä³öµÄÎÄ×Ö
+//éšæœºå–è¦è¾“å‡ºçš„æ–‡å­—
               var text = txts[Math.floor(Math.random()*txts.length)];
-//Êä³öÎÄ×Ö£¬×¢Òâ×ø±êµÄ¼ÆËã
+//è¾“å‡ºæ–‡å­—ï¼Œæ³¨æ„åæ ‡çš„è®¡ç®—
               ctx.fillText(text, i*font_size, drops[i]*font_size);
-//Èç¹û»æÂúÒ»ÆÁ»òËæ»úÊı´óÓÚ0.95£¨´ËÊı¿É×ÔĞĞµ÷Õû£¬Ğ§¹û»á²»Í¬£©
+//å¦‚æœç»˜æ»¡ä¸€å±æˆ–éšæœºæ•°å¤§äº0.95ï¼ˆæ­¤æ•°å¯è‡ªè¡Œè°ƒæ•´ï¼Œæ•ˆæœä¼šä¸åŒï¼‰
               if(drops[i]*font_size > c.height || Math.random() > 0.95)
                   drops[i] = 0;
-//ÓÃÓÚYÖá×ø±êÔö¼Ó
+//ç”¨äºYè½´åæ ‡å¢åŠ 
               drops[i]++;
           }
       }
